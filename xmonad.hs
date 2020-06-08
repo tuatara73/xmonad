@@ -15,10 +15,8 @@ main = do
 		}
         { layoutHook = avoidStruts  $  layoutHook defaultConfig
         , logHook = dynamicLogWithPP xmobarPP
-                        { ppOutput = hPutStrLn xmproc
-                        , ppTitle = xmobarColor "green" "" . shorten 50
                         }
-        } `additionalKeys`
+         `additionalKeys`
         [ ((mod4Mask, xK_l), spawn "slock")
         , ((mod4Mask, xK_f), spawn "firefox")
         , ((mod4Mask, xK_r), spawn "remmina")
