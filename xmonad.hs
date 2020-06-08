@@ -10,10 +10,10 @@ import System.IO
 
 main = do   
     xmproc <- spawnPipe "xmobar"
-    xmonad $ docks defaultConfig
+    xmonad $ docks def
 		{ terminal    = "st"
 		}
-        { layoutHook = avoidStruts  $  layoutHook defaultConfig
+        { layoutHook = avoidStruts  $  layoutHook def
         , logHook = dynamicLogWithPP xmobarPP
                         }
          `additionalKeys`
