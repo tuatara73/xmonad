@@ -9,7 +9,8 @@ import System.IO
 
 
 main = do   
-    xmproc <- spawnPipe "xmobar"
+    xmproc1 <- spawnPipe "xmobar -x 1 /home/tuatara/.xmobar/xmobarrc1"
+    xmproc2 <- spawnPipe "xmobar -x 2 /home/tuatara/.xmobar/xmobarrc2"
     xmonad $ docks def
 		{ terminal    = "st"
 		}
@@ -20,7 +21,7 @@ main = do
         [ ((mod4Mask, xK_l), spawn "slock")
         , ((mod4Mask, xK_f), spawn "firefox")
         , ((mod4Mask, xK_r), spawn "remmina")
-        , ((mod4Mask, xK_n), spawn "st -e nnn")
+        , ((mod4Mask, xK_v), spawn "st -e vim")
         , ((mod4Mask, xK_n), spawn "st -e nnn")
         , ((mod4Mask, xK_Prior), spawn "pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo +5%")
         , ((mod4Mask, xK_Next), spawn "pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo -5%")
